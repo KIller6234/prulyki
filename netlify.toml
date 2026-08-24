@@ -1,0 +1,13 @@
+# Netlify визначає Next.js App Router автоматично через офіційний
+# @netlify/plugin-nextjs (підтягується самим Netlify під час білда — не
+# потрібно додавати в package.json). Явний плагін тут — щоб конфігурація
+# була відтворюваною, а не залежала лише від автодетекції в UI.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

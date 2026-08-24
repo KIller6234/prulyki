@@ -1,0 +1,360 @@
+// Prisma schema for "Чисті Прилуки" MVP.
+// See /home/pfpgp/.claude/plans/swirling-cuddling-simon.md for the full design rationale.
+
+generator client {
+  provider        = "prisma-client"
+  output          = "../app/generated/prisma"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  extensions = [vector, pgTrgm(map: "pg_trgm")]
+}
+
+// ---------- Довідники ----------
+
+enum CollectionMethod {
+  CONTAINER
+  PACKAGE
+}
+
+model Street {
+  id               String           @id @default(cuid())
+  name             String
+  nameNormalized   String
+  district         String?
+  collectionMethod CollectionMethod @default(CONTAINER)
+
+  primaryCollectionPointId String?
+  primaryCollectionPoint   CollectionPoint? @relation("PrimaryPoint", fields: [primaryCollectionPointId], references: [id])
+
+  packageSchedules SchedulePackageStreet[]
+  complaints       Complaint[]
+  createdAt        DateTime                @default(now())
+
+  @@index([nameNormalized])
+}
+
+enum WasteCategory {
+  MIXED
+  PLASTIC
+  GLASS
+  PAPER
+  BULK
+}
+
+model CollectionPoint {
+  id                  String    @id @default(cuid())
+  address             String
+  lat                 Float
+  lng                 Float
+  operatorName        String
+  isBulkWasteSite     Boolean   @default(false)
+  fillLevelPercent    Int?
+  lastMeasuredAt      DateTime?
+  status              String    @default("ACTIVE")
+  deactivatedAt       DateTime?
+  deactivationReason  String?
+  internalNotes       String?
+
+  photos        CollectionPointPhoto[]
+  containers    Container[]
+  schedules     ScheduleContainer[]
+  complaints    Complaint[]
+  streetsServed Street[]               @relation("PrimaryPoint")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+}
+
+model CollectionPointPhoto {
+  id                 String          @id @default(cuid())
+  collectionPointId  String
+  collectionPoint    CollectionPoint @relation(fields: [collectionPointId], references: [id])
+  storagePath        String
+  uploadedAt         DateTime        @default(now())
+}
+
+model Container {
+  id                 String          @id @default(cuid())
+  collectionPointId  String
+  collectionPoint    CollectionPoint @relation(fields: [collectionPointId], references: [id])
+  wasteCategory      WasteCategory
+  volumeLiters       Int
+  quantity           Int             @default(1)
+}
+
+enum SchedulePeriodicity {
+  DAILY
+  EVERY_OTHER_DAY
+  WEEKLY
+  TWICE_WEEKLY
+}
+
+enum ScheduleStatus {
+  ACTIVE
+  ARCHIVED
+}
+
+model Vehicle {
+  id                 String              @id @default(cuid())
+  plateNumber        String
+  vehicleType        String
+  capacityM3         Float
+  fuelNormLPer100km  Float?
+  containerSchedules ScheduleContainer[]
+}
+
+model ScheduleContainer {
+  id                 String              @id @default(cuid())
+  collectionPointId  String
+  collectionPoint    CollectionPoint     @relation(fields: [collectionPointId], references: [id])
+  daysOfWeek         Int[]
+  timeFrom           String
+  periodicity        SchedulePeriodicity
+  vehicleId          String?
+  vehicle            Vehicle?            @relation(fields: [vehicleId], references: [id])
+  status             ScheduleStatus      @default(ACTIVE)
+  createdAt          DateTime            @default(now())
+}
+
+model SchedulePackage {
+  id          String                   @id @default(cuid())
+  daysOfWeek  Int[]
+  timeFrom    String
+  periodicity SchedulePeriodicity
+  status      ScheduleStatus           @default(ACTIVE)
+  streets     SchedulePackageStreet[]
+  createdAt   DateTime                 @default(now())
+}
+
+model SchedulePackageStreet {
+  id                String          @id @default(cuid())
+  schedulePackageId String
+  schedulePackage   SchedulePackage @relation(fields: [schedulePackageId], references: [id])
+  streetId          String
+  street            Street          @relation(fields: [streetId], references: [id])
+
+  @@unique([schedulePackageId, streetId])
+}
+
+// ---------- Довідник сортування ----------
+
+model SortingGuideItem {
+  id           String        @id @default(cuid())
+  name         String
+  category     WasteCategory
+  description  String
+  howToSort    String
+  isRecyclable Boolean
+  imageUrl     String?
+  sortOrder    Int           @default(0)
+}
+
+// ---------- Новини ----------
+
+model NewsPost {
+  id          String    @id @default(cuid())
+  title       String
+  body        String
+  isPublished Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+}
+
+// ---------- Звернення громадян ----------
+
+enum ComplaintType {
+  PROPOSAL
+  PETITION
+  COMPLAINT
+}
+
+enum ComplaintStatus {
+  REGISTERED
+  UNDER_REVIEW
+  FORWARDED
+  DONE
+  REJECTED
+  EXTENDED
+  ANNULLED
+}
+
+enum ComplaintPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum DeadlineType {
+  GENERAL_30
+  REDUCED_15
+}
+
+model Complaint {
+  id                 String   @id @default(cuid())
+  registrationNumber String   @unique
+  type               ComplaintType
+  subject             String
+  description         String
+  addressText         String?
+  lat                 Float?
+  lng                 Float?
+
+  streetId          String?
+  street            Street?          @relation(fields: [streetId], references: [id])
+  collectionPointId String?
+  collectionPoint   CollectionPoint? @relation(fields: [collectionPointId], references: [id])
+
+  applicantName       String
+  applicantPhone      String?
+  applicantEmail      String?
+  personalDataConsent Boolean
+
+  status            ComplaintStatus   @default(REGISTERED)
+  priority          ComplaintPriority @default(MEDIUM)
+  deadlineType      DeadlineType      @default(GENERAL_30)
+  dueDate           DateTime
+
+  assignedToStaffId String?
+  assignedToStaff   StaffUser? @relation(fields: [assignedToStaffId], references: [id])
+
+  isAnnulled  Boolean @default(false)
+  annulReason String?
+
+  /** Заповненість контейнера (%), яку інспектор зафіксував під час вирішення звернення. */
+  reportedFillLevelPercent Int?
+
+  versions    ComplaintVersion[]
+  attachments ComplaintAttachment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([registrationNumber])
+}
+
+model ComplaintVersion {
+  id             String          @id @default(cuid())
+  complaintId    String
+  complaint      Complaint       @relation(fields: [complaintId], references: [id])
+  versionNumber  Int
+  status         ComplaintStatus
+  resolutionText String?
+  authorStaffId  String?
+  authorStaff    StaffUser?      @relation(fields: [authorStaffId], references: [id])
+  changedAt      DateTime        @default(now())
+
+  @@unique([complaintId, versionNumber])
+}
+
+model ComplaintAttachment {
+  id               String    @id @default(cuid())
+  complaintId      String
+  complaint        Complaint @relation(fields: [complaintId], references: [id])
+  storagePath      String
+  originalFileName String
+  mimeType         String
+  sizeBytes        Int
+  uploadedAt       DateTime  @default(now())
+}
+
+// ---------- Staff ----------
+
+enum StaffRole {
+  DISPATCHER
+  INSPECTOR
+  ADMIN
+}
+
+model StaffUser {
+  id                  String    @id @default(cuid())
+  email               String    @unique
+  phone               String?
+  passwordHash        String
+  fullName            String
+  role                StaffRole @default(DISPATCHER)
+  isActive            Boolean   @default(true)
+  lastLoginAt         DateTime?
+  failedLoginAttempts Int       @default(0)
+  lockedUntil         DateTime?
+  createdAt           DateTime  @default(now())
+
+  assignedComplaints Complaint[]
+  complaintVersions  ComplaintVersion[]
+}
+
+// ---------- База знань / RAG ----------
+
+enum KnowledgeSourceType {
+  LAW
+  SANITARY_RULE
+  LOCAL_RULE
+  SCHEDULE_INFO
+  OTHER
+}
+
+model KnowledgeDocument {
+  id         String              @id @default(cuid())
+  title      String
+  sourceType KnowledgeSourceType
+  sourceUrl  String?
+  fullText   String
+  isActive   Boolean             @default(true)
+  uploadedAt DateTime            @default(now())
+  chunks     KnowledgeChunk[]
+}
+
+model KnowledgeChunk {
+  id            String                     @id @default(cuid())
+  documentId    String
+  document      KnowledgeDocument          @relation(fields: [documentId], references: [id])
+  chunkIndex    Int
+  content       String
+  citationLabel String
+  embedding     Unsupported("vector(1536)")?
+  createdAt     DateTime                   @default(now())
+
+  @@index([documentId])
+}
+
+// ---------- Чат ШІ-консультанта ----------
+
+model ChatSession {
+  id             String        @id @default(cuid())
+  sessionToken   String        @unique
+  createdAt      DateTime      @default(now())
+  lastActivityAt DateTime      @default(now())
+  messages       ChatMessage[]
+}
+
+enum ChatRole {
+  USER
+  ASSISTANT
+}
+
+model ChatMessage {
+  id            String      @id @default(cuid())
+  chatSessionId String
+  chatSession   ChatSession @relation(fields: [chatSessionId], references: [id])
+  role          ChatRole
+  content       String
+  citations     Json?
+  createdAt     DateTime    @default(now())
+}
+
+// ---------- Rate limiting ----------
+
+model RateLimitLog {
+  id          String   @id @default(cuid())
+  ipHash      String
+  endpoint    String
+  windowStart DateTime
+  count       Int      @default(1)
+
+  @@unique([ipHash, endpoint, windowStart])
+}

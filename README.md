@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Чисті Прилуки — MVP
 
-## Getting Started
+Вебплатформа управління побутовими відходами Прилуцької міської
+територіальної громади. Це 4-денний MVP на правдоподібних даних —
+контекст, свідомі спрощення проти повного ТЗ і план допрацювання описані
+в `/home/pfpgp/.claude/plans/swirling-cuddling-simon.md`.
 
-First, run the development server:
+## Стек
+
+Next.js 16 (App Router, Turbopack) · TypeScript strict · Prisma 7 (driver
+adapter `@prisma/adapter-pg`) · PostgreSQL 16 + pgvector + pg_trgm ·
+Tailwind CSS · Leaflet · Zod · react-hook-form · Anthropic SDK (опційно).
+
+## Локальний запуск
+
+1. **Залежності:**
+   ```bash
+   npm install
+   ```
+
+2. **База даних.** Локально піднімається через Docker (той самий образ,
+   що й у Supabase — `pgvector/pgvector:pg16`):
+   ```bash
+   docker run -d --name prulyky-postgres \
+     -e POSTGRES_USER=prulyky \
+     -e POSTGRES_PASSWORD=prulyky_dev_password \
+     -e POSTGRES_DB=prulyky \
+     -p 55432:5432 \
+     pgvector/pgvector:pg16
+   ```
+   `.env` вже містить відповідний `DATABASE_URL`. Для переїзду на реальний
+   Supabase-проєкт достатньо замінити значення `DATABASE_URL` — код цього
+   не потребує (адаптер `PrismaPg` працює з будь-яким Postgres-з'єднанням).
+
+3. **Міграції та наповнення даними:**
+   ```bash
+   npx prisma migrate deploy
+   npx prisma db seed
+   ```
+   Seed генерує: 60 реальних вулиць Прилук, 40 контейнерних майданчиків,
+   графіки вивезення, 40 позицій довідника сортування, 3 staff-акаунти,
+   базу знань ШІ-консультанта (реальні витяги Закону «Про звернення
+   громадян» і ДСанПіН + один явно позначений placeholder-документ).
+
+4. **Запуск:**
+   ```bash
+   npm run dev
+   ```
+   Відкрити http://localhost:3000
+
+## Deploy на Vercel + Supabase
+
+1. Створити проєкт на Supabase, у SQL-редакторі увімкнути розширення:
+   `create extension if not exists vector; create extension if not exists pg_trgm;`
+2. У Vercel: імпортувати репозиторій, задати env-змінні з `.env.example`
+   (`DATABASE_URL` — Supabase connection string; `SESSION_SECRET` —
+   новий випадковий рядок ≥32 символів, відмінний від dev-значення;
+   `STAFF_SEED_PASSWORD` — лише якщо сідинг запускається повторно).
+3. `prisma generate` виконується автоматично (`postinstall`-скрипт).
+   Міграції та первинний seed на Supabase виконати окремо перед першим
+   деплоєм (з локальної машини, вказавши Supabase `DATABASE_URL`):
+   ```bash
+   npx prisma migrate deploy
+   npx prisma db seed
+   ```
+4. Файли, завантажені через `LocalDiskStorageProvider` (`public/uploads`),
+   на Vercel не персистентні між білдами — перед промисловим використанням
+   підключити `SupabaseStorageProvider` (env-змінні для цього вже
+   зарезервовані в `.env.example`), реалізувавши `StorageProvider` з
+   `lib/storage.ts` за тим самим патерном, що й AI-провайдер.
+
+## Staff-кабінет
+
+Вхід: http://localhost:3000/staff/login
+
+| Роль | E-mail | Пароль |
+|---|---|---|
+| Адміністратор | `admin@prylukymtg.example` | значення `STAFF_SEED_PASSWORD` з `.env` (dev-дефолт `ChangeMe123!`) |
+| Диспетчер | `dispatcher@prylukymtg.example` | те саме |
+| Інспектор | `inspector@prylukymtg.example` | те саме |
+
+`prylukymtg.example` — умовний домен (`.example` зарезервовано IANA для
+плейсхолдерів), не реальна адреса громади.
+
+**Обов'язково змінити пароль і перегенерувати `SESSION_SECRET` перед
+промисловою експлуатацією** (розділ 6 ТЗ).
+
+## ШІ-консультант
+
+Без `ANTHROPIC_API_KEY` у `.env` консультант (`/chat`) працює в
+mock-режимі: чесно повертає найрелевантніші фрагменти бази знань без
+виклику LLM, з явним написом «AI-провайдер ще не підключено». Після
+додавання ключа підключення реального провайдера відбувається без правок
+коду — див. `lib/ai/index.ts`.
+
+## Перевірка перед комітом
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx tsc --noEmit
+npx eslint . --max-warnings=0
+npx next build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Що ще не реалізовано в цьому MVP
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2FA · повний RBAC · журнал аудиту · email/push-сповіщення · аналітичні
+дашборди й ROI · пентест · offline PWA · i18n · відкриті дані data.gov.ua ·
+інтеграція апаратних датчиків · повний пакет документації розд. 7 ТЗ.
+Повний список — у файлі плану, розділ «Що ТЗ вимагає, але свідомо не
+робимо».

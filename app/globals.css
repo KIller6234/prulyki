@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
+/*
+ * Дизайн-система «Чисті Прилуки» — за специфікацією замовника.
+ * Primary: #1B5E42 (темно-зелений). Фон сторінки: #F2F3F1. Картки: білі.
+ * Другорядний блок (ШІ-консультант): м'ятний #E3F3EA.
+ * Текст: gray-800 (#1F2937) основний, gray-500 (#6B7280) другорядний —
+ * стандартна Tailwind-палітра `gray`, тому в компонентах використовуються
+ * класи `text-gray-*` / `border-gray-*` напряму.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f2f3f1;
+  --foreground: #1f2937;
+
+  /* Primary — темно-зелений бренд-колір */
+  --color-primary-50: #eaf3ee;
+  --color-primary-100: #d4e7dc;
+  --color-primary-200: #a9cfb9;
+  --color-primary-300: #7db697;
+  --color-primary-400: #529e75;
+  --color-primary-500: #2d7b58;
+  --color-primary-600: #1b5e42;
+  --color-primary-700: #164a34;
+  --color-primary-800: #103726;
+  --color-primary-900: #0a2418;
+
+  /* Secondary — синій (посилання, інформаційні акценти) */
+  --color-secondary-50: #f4f8fb;
+  --color-secondary-100: #d2e2f1;
+  --color-secondary-200: #b0cee7;
+  --color-secondary-300: #8eb8dc;
+  --color-secondary-400: #5694ca;
+  --color-secondary-500: #2a7fc1;
+  --color-secondary-600: #1d70b8;
+  --color-secondary-700: #1a65a6;
+  --color-secondary-800: #16548a;
+  --color-secondary-900: #0f385c;
+
+  /* М'ятний — акцентний блок ШІ-консультанта */
+  --color-mint-100: #e3f3ea;
+  --color-mint-200: #c9e7d6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+
+  --color-mint-100: var(--color-mint-100);
+  --color-mint-200: var(--color-mint-200);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Свідомо light-only: державний/громадський сервіс пріоритизує стабільний
+   високий контраст над темною темою. */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-secondary-600);
+  outline-offset: 2px;
+}
+
+/* Спільний стиль картки, узгоджений по всьому проєкту. */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
