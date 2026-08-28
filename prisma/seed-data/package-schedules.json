@@ -1,0 +1,2204 @@
+[
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "timeFrom": "07:00",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Сорочинська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "07:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Л. Українки"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "07:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. П. Сагайдачного"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "07:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. В. Чорновола",
+      "пров. Густинський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      4,
+      5
+    ],
+    "timeFrom": "07:10",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Братів Ревуцьких"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "07:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Січових Стрільців"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4,
+      5
+    ],
+    "timeFrom": "07:10",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Дачна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "timeFrom": "07:15",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Героїв Прилук"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      4
+    ],
+    "timeFrom": "07:15",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. В. Завітневича"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "07:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. П. Сагайдачного"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4,
+      5
+    ],
+    "timeFrom": "07:15",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Андріївська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "07:20",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Пирятинська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      4,
+      5,
+      7
+    ],
+    "timeFrom": "07:20",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Ракітна, П. Комуни"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      4,
+      5
+    ],
+    "timeFrom": "07:20",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. І. Богуна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "07:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Залізничний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      4,
+      5
+    ],
+    "timeFrom": "07:20",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "В/ч 12"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "07:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Заводський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "07:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Змагання"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "07:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Піщана"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "timeFrom": "07:30",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Миролюбна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      3,
+      5
+    ],
+    "timeFrom": "07:30",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. 18 Вересня"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "07:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. М. Яковченка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "07:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "Привокзальну площа"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "07:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Героїв Крут"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "07:40",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Скоропадського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "07:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Короленка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "timeFrom": "07:45",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Густинська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "timeFrom": "07:45",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. І. Білгородського",
+      "вул. Фабрична"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      5
+    ],
+    "timeFrom": "07:45",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Д. Шкоропада"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "07:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Яблунівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "07:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Г. Сагайдачного"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "07:50",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Київська-Козача"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "07:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Світанкова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "07:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. М. Андріяшева"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "08:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "провул. Г. Сагайдачного"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "08:00",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Л. Лук'яненка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "08:00",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "перехрестя Земська-Скоропадського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "08:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Л. Українки"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "08:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. М. Приймаченка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "08:05",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 в-д Небесної Сотні"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "08:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Ждановича"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "08:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Дослідний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      3,
+      5
+    ],
+    "timeFrom": "08:15",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Миру"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "08:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. І. Мазепи"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
+    "timeFrom": "08:20",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Партизанська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      4
+    ],
+    "timeFrom": "08:20",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Котляревського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      5
+    ],
+    "timeFrom": "08:25",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Трубарівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      5,
+      6
+    ],
+    "timeFrom": "08:25",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "перехрестя Київська-Котляревського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "08:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Європейський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "08:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "3 пров. Дослідний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      4
+    ],
+    "timeFrom": "08:30",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. М. Лисенка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      3
+    ],
+    "timeFrom": "08:30",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "пров. Північний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "08:35",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. М. Старицького"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "08:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. І. Мазепи"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "08:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Прорізний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "08:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "4 пров. Дослідний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "08:40",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Київська-І. Сірка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "08:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Н. Левинського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "08:45",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Козача"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      4
+    ],
+    "timeFrom": "08:45",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "пров. Фізкультурника"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "08:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. П. Комуни"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "08:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Залізнична",
+      "пров. Героїв Прилук"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "08:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. М. Міхновського",
+      "вул. Чорновола"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "08:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. М. Старицького"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "09:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Пирогівський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "09:00",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Незалежності"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "09:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Ю. Коваленка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "09:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Європейський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "09:05",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. О. Вересая"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "09:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. П. Дорошенка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "09:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "в'їзд Густинський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "09:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. П. Комуни"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "09:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Ю. Коваленка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "09:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Ждановича"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "09:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Пирогівський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "09:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Паркова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "09:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. М. Леонтовича"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5,
+      7
+    ],
+    "timeFrom": "09:20",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Шкільна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "09:25",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Ковалівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "09:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "3 пров. П. Комуни"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      4
+    ],
+    "timeFrom": "09:30",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Військова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "09:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. М. Приймаченко"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "09:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Героїв Прилук"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "timeFrom": "09:35",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. В. Стуса"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "09:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "3 пров. Замостянський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      5
+    ],
+    "timeFrom": "09:40",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "пров. Східний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "09:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "М-н \"Ірина\""
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "09:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "4 пров. Замостянський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      5
+    ],
+    "timeFrom": "09:50",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Оранжерейна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "09:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. М. Маркевича"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "09:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Замостянський",
+      "вул. Рокітна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "09:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Сагайдачного"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "10:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Пирятинський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "10:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. І. Франка",
+      "вул. Макаренка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "10:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Південний",
+      "вул. Родини Горленків"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
+    "timeFrom": "10:10",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "В/м"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "10:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Рокітний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "10:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. І. Франка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "10:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Авіації"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "10:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Лісовська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "10:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Фабричний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "10:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Західна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "10:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Оранжерейний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "10:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Південна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "timeFrom": "10:30",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Житня"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "10:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Пирогівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "timeFrom": "10:35",
+    "periodicity": "DAILY",
+    "streetNames": [
+      "вул. Чернігівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "10:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. П. Орлика"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "10:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Андріївський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      4
+    ],
+    "timeFrom": "10:45",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Кільцева"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "10:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Західний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "10:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Героїв Чорнобиля",
+      "пров. П. Орлика"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "10:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Малківська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "10:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Шевченка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      5
+    ],
+    "timeFrom": "10:50",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Кощюбинського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1,
+      4,
+      5
+    ],
+    "timeFrom": "10:55",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "Замовлення"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "10:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Молодіжна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "11:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Климачівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "11:05",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Кустівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      3
+    ],
+    "timeFrom": "11:05",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Берегова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "11:05",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Колгоспний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "11:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. 2-га Південна",
+      "пров. М. Лисенка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "11:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Трудовий"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "11:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Зелена"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "11:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Кустівський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "11:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Кар'єрна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      4,
+      5
+    ],
+    "timeFrom": "11:40",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Гоголя"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "11:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Зелений"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "11:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Межова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "11:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "5 в'їзд Гоголя"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "12:05",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. І. Сірка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "12:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "3 пров. І. Сірка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "12:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Вербна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "12:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Межовий"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "12:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Іподромний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      7
+    ],
+    "timeFrom": "12:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "6 км"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "12:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. І. Сірка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "12:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. І. Піддубного"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "12:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. І. Сірка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "12:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Межовий"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "12:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Б. Хмельницького"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "12:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 в'їзд Вишневий"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "12:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Зелений"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "12:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Ніжинська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      4
+    ],
+    "timeFrom": "12:45",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Квашинська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "12:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. В. Стуса"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "12:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "від вул. Перемоги до"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "12:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. В. Стуса"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "13:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Кругова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "13:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 в'їзд Вишневий",
+      "вул. Раскова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "13:05",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Трубарівський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "13:05",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. С. Величка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "13:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 в'їзд Гоголя"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "13:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Низова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "13:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Л. Забашти"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      5
+    ],
+    "timeFrom": "13:20",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Б. Носенка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "13:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "М'ясокомбінат"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "13:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Герцена"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "13:25",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 в'їзд Василя Стуса"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "13:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Змагання"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "13:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Нова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "13:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Шкоропада"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "13:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "провв. Л. Забашти"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "13:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Осипенка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "13:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Героїв Чорнобиля"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "13:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Ботанічна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "13:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Польовий"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "13:50",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Половецька"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "14:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Ветеранський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "14:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Партизанський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "14:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "3 пров. Гімназичний",
+      "вул. Миколаївська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "14:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Ладанська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "14:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Шарапівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "14:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Гостинна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "14:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Східний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "14:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "пров. Шевченка"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2,
+      4
+    ],
+    "timeFrom": "14:25",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "2 пров. Андріївський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "14:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1,2 в'їзд Шарапівський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "14:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Сковороди"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      4
+    ],
+    "timeFrom": "14:30",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Дідівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "14:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Мединська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "14:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Східний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "14:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Михайлівський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "14:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Скоропадського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "14:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "3 пров. Європейський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      4
+    ],
+    "timeFrom": "14:45",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "вул. Лохвицька"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "14:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Дубинського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3,
+      6
+    ],
+    "timeFrom": "14:50",
+    "periodicity": "TWICE_WEEKLY",
+    "streetNames": [
+      "в/м 17"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "14:55",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Волошинівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "15:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Удайський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "15:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Педагогічний",
+      "вул. Червона Рута"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "15:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Миротворців"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "15:00",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Аерофлотська",
+      "вул. Грушевського"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      2
+    ],
+    "timeFrom": "15:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Берегова Рута"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "15:10",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Степова"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "15:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "2 пров. Удайський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "15:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "4 пров. Педагогічний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "15:15",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. О. Пчілки"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "15:20",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Варвинська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "15:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "1 пров. Педагогічний"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      5
+    ],
+    "timeFrom": "15:30",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Плискунівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "15:35",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Голубівська"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      1
+    ],
+    "timeFrom": "15:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "3 пров. Удайський"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      3
+    ],
+    "timeFrom": "15:40",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Педагогічна"
+    ]
+  },
+  {
+    "daysOfWeek": [
+      4
+    ],
+    "timeFrom": "15:45",
+    "periodicity": "WEEKLY",
+    "streetNames": [
+      "вул. Будівельників"
+    ]
+  }
+]

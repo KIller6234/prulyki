@@ -1,0 +1,56 @@
+[
+  {
+    "plateNumber": "СВ 81-71 ВК",
+    "vehicleType": "МАЗ 4381 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 50-33 АР",
+    "vehicleType": "КАМАЗ 55111 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 17-85 ВН",
+    "vehicleType": "ГАЗ 3309 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 52-62 СА",
+    "vehicleType": "Рено Лендер (для ВГВ)",
+    "capacityM3": 12,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 64-11 ЕТ",
+    "vehicleType": "АТ 4021/1120 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 53-06 СА",
+    "vehicleType": "МАЗ-4371 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 33-16 ЕО",
+    "vehicleType": "АТ 4021 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 14-65 ЕО",
+    "vehicleType": "АТ-4021/1120 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  },
+  {
+    "plateNumber": "СВ 33-15 ЕО",
+    "vehicleType": "АТ 40-42/ROD21003 (сміттєвоз)",
+    "capacityM3": 0,
+    "fuelNormLPer100km": null
+  }
+]

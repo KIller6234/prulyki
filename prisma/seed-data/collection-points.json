@@ -1,0 +1,1632 @@
+[
+  {
+    "address": "вул. Галаганівська",
+    "lat": 50.59629,
+    "lng": 32.38818,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Переяславська, 3",
+    "lat": 50.59455,
+    "lng": 32.38473,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Переяславська, 10",
+    "lat": 50.59346,
+    "lng": 32.38329,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Переяславська, 28",
+    "lat": 50.59179,
+    "lng": 32.3816,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Переяславська, 72",
+    "lat": 50.58757,
+    "lng": 32.37937,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 7
+      }
+    ]
+  },
+  {
+    "address": "Перехрестя Скоропатського - Земська",
+    "lat": 50.59726,
+    "lng": 32.38149,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Земська, 7",
+    "lat": 50.59487,
+    "lng": 32.38074,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "address": "вул. Земська, 37",
+    "lat": 50.59085,
+    "lng": 32.37928,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Ю. Мірюти, 30",
+    "lat": 50.59979,
+    "lng": 32.33125,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Ю. Мірюти (кінцева зупинка)",
+    "lat": 50.60202,
+    "lng": 32.32877,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "address": "вул. Ярмаркова, 49",
+    "lat": 50.58928,
+    "lng": 32.40312,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Ярмаркова, 41/1",
+    "lat": 50.59143,
+    "lng": 32.40403,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Ярмаркова, 114 (іжбат)",
+    "lat": 50.59143,
+    "lng": 32.40403,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Шевченка, 107",
+    "lat": 50.58629,
+    "lng": 32.40118,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Героїв Чорнобиля, 80",
+    "lat": 50.58841,
+    "lng": 32.40968,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. В. Чорновола, 48-А",
+    "lat": 50.58806,
+    "lng": 32.37606,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "address": "вул. В. Чорновола, 113",
+    "lat": 50.58599,
+    "lng": 32.38853,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Європейська, 110",
+    "lat": 50.58985,
+    "lng": 32.38311,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Європейська, 115-117",
+    "lat": 50.59168,
+    "lng": 32.38683,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Вокзальна, 3",
+    "lat": 50.5934,
+    "lng": 32.38619,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "address": "вул. Вокзальна, 10",
+    "lat": 50.59305,
+    "lng": 32.38582,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "address": "вул. Вокзальна (м-н Едем)",
+    "lat": 50.59125,
+    "lng": 32.38539,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Вокзальна, 46",
+    "lat": 50.5875,
+    "lng": 32.38378,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Садова, 64",
+    "lat": 50.59118,
+    "lng": 32.38789,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Садова, 73",
+    "lat": 50.59283,
+    "lng": 32.38962,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Іванівська, 84",
+    "lat": 50.58825,
+    "lng": 32.37382,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Іванівська (автозаправка)",
+    "lat": 50.5874,
+    "lng": 32.37419,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "address": "вул. Перемоги, 180",
+    "lat": 50.58074,
+    "lng": 32.41487,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Київська (3-й магазин)",
+    "lat": 50.58946,
+    "lng": 32.42096,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Соборна, 125",
+    "lat": 50.59242,
+    "lng": 32.41294,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Леонтовича, 66",
+    "lat": 50.59328,
+    "lng": 32.39992,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Гімназична, 85 (карам.)",
+    "lat": 50.58979,
+    "lng": 32.39201,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Гімназична, 102 (біля кладовища)",
+    "lat": 50.58829,
+    "lng": 32.39157,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "address": "вул. Саксаганського, 2",
+    "lat": 50.58551,
+    "lng": 32.37272,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Саксаганського, 52",
+    "lat": 50.58164,
+    "lng": 32.36786,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "address": "Європейська, 49 (перехрестя Ветеранська)",
+    "lat": 50.59217,
+    "lng": 32.37217,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Київська, 113",
+    "lat": 50.59361,
+    "lng": 32.39423,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Київська (площа)",
+    "lat": 50.59487,
+    "lng": 32.38587,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "address": "вул. Київська (АТБ)",
+    "lat": 50.59496,
+    "lng": 32.38984,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "address": "вул. Ветеранська, 2 (парк слави)",
+    "lat": 50.59683,
+    "lng": 32.37435,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Київська (райлікарня)",
+    "lat": 50.59761,
+    "lng": 32.36655,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Київська (5-й магазин)",
+    "lat": 50.59815,
+    "lng": 32.36258,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Київська, 56",
+    "lat": 50.59866,
+    "lng": 32.35073,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Пирятинська (автовокзал)",
+    "lat": 50.58256,
+    "lng": 32.39378,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Котляревського (автозаправка )",
+    "lat": 50.58831,
+    "lng": 32.39508,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "address": "вул. Небесної сотні, 14",
+    "lat": 50.59553,
+    "lng": 32.36455,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Коновальця, 67 (автозаправка )",
+    "lat": 50.57871,
+    "lng": 32.40837,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "address": "вул. Архиповича, 14 (Сорочинці)",
+    "lat": 50.61517,
+    "lng": 32.38303,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 6
+      }
+    ]
+  },
+  {
+    "address": "вул. Незалежності (центральний пляж)",
+    "lat": 50.6024,
+    "lng": 32.3853,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. Польова, 100",
+    "lat": 50.57275,
+    "lng": 32.41315,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Польова, 112",
+    "lat": 50.57105,
+    "lng": 32.40975,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. Індустріальна, 7А",
+    "lat": 50.57228,
+    "lng": 32.40624,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "address": "вул. Гвардійська, 92",
+    "lat": 50.57459,
+    "lng": 32.41067,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "в/м №12, буд. 152",
+    "lat": 50.58888,
+    "lng": 32.35811,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "в/м №12, буд. 106",
+    "lat": 50.58627,
+    "lng": 32.35659,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "в/м №12, буд. 146",
+    "lat": 50.58748,
+    "lng": 32.35829,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 3
+      }
+    ]
+  },
+  {
+    "address": "вул. В. Чорновола, 107",
+    "lat": 50.58697,
+    "lng": 32.38578,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. М. Леонтовича, 76",
+    "lat": 50.59178,
+    "lng": 32.39929,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": false,
+    "internalNotes": null,
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 4
+      }
+    ]
+  },
+  {
+    "address": "вул. В. Чорновола, 87-А",
+    "lat": 50.5893,
+    "lng": 32.38018,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": "Сміттєприймальний пункт",
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  },
+  {
+    "address": "вул. Ярмаркова, 41/9",
+    "lat": 50.58912,
+    "lng": 32.40583,
+    "operatorName": "КП «Послуга»",
+    "isBulkWasteSite": true,
+    "internalNotes": "Сміттєприймальний пункт",
+    "containers": [
+      {
+        "wasteCategory": "PAPER",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "GLASS",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "PLASTIC",
+        "volumeLiters": 240,
+        "quantity": 1
+      },
+      {
+        "wasteCategory": "MIXED",
+        "volumeLiters": 1100,
+        "quantity": 5
+      }
+    ]
+  }
+]

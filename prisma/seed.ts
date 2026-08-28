@@ -4,231 +4,287 @@ import { join } from "node:path";
 import { PrismaPg } from "@prisma/adapter-pg";
 import {
   PrismaClient,
-  WasteCategory,
+  type WasteCategory,
+  type SchedulePeriodicity,
+  type CollectionMethod,
   type KnowledgeSourceType,
-  type ComplaintStatus,
-  type ComplaintPriority,
-  type ComplaintType,
 } from "../app/generated/prisma/client";
 import { normalizeUkrainianStreetName } from "../lib/geo/ukrainianNormalize";
 import { hashPassword } from "../lib/auth/hash";
 import { parseKnowledgeMarkdown } from "../lib/knowledge/chunkMarkdown";
-import { generateRegistrationNumber } from "../lib/complaints/registrationNumber";
-import { computeComplaintDeadline } from "../lib/complaints/deadline";
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
 
 const SEED_DATA_DIR = join(__dirname, "seed-data");
 
-/** Deterministic PRNG (mulberry32) so repeated seed runs produce the same data. */
-function createSeededRandom(seed: number): () => number {
-  let state = seed;
-  return () => {
-    state = (state + 0x6d2b79f5) | 0;
-    let t = state;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
+function readJson<T>(fileName: string): T {
+  return JSON.parse(
+    readFileSync(join(SEED_DATA_DIR, fileName), "utf-8"),
+  ) as T;
 }
 
-const random = createSeededRandom(20260816);
+// --------------------------------------------------------------------------- //
+// Реальні дані КП «Послуга», Прилуцька міська рада.
+// JSON генерується скриптом scripts/build-seed-data.py з відсканованих
+// графіків вивезення (prisma/seed-data/source/). Перезапустити скрипт після
+// оновлення вихідного xlsx.
+// --------------------------------------------------------------------------- //
 
-function pick<T>(items: readonly T[]): T {
-  return items[Math.floor(random() * items.length)];
+interface VehicleRow {
+  plateNumber: string;
+  vehicleType: string;
+  capacityM3: number;
+  fuelNormLPer100km: number | null;
 }
 
-interface StreetSeedRow {
+interface ContainerRow {
+  wasteCategory: WasteCategory;
+  volumeLiters: number;
+  quantity: number;
+}
+
+interface CollectionPointRow {
+  address: string;
+  lat: number;
+  lng: number;
+  operatorName: string;
+  isBulkWasteSite: boolean;
+  internalNotes: string | null;
+  containers: ContainerRow[];
+}
+
+interface StreetScheduleRow {
+  daysOfWeek: number[];
+  timeFrom: string;
+  periodicity: SchedulePeriodicity;
+  vehiclePlate: string | null;
+}
+
+interface StreetRow {
   name: string;
-  district: string;
-  collectionMethod: "CONTAINER" | "PACKAGE";
+  collectionMethod: CollectionMethod;
+  primaryPointAddress: string | null;
+  schedule: StreetScheduleRow | null;
 }
+
+interface PackageScheduleRow {
+  daysOfWeek: number[];
+  timeFrom: string;
+  periodicity: SchedulePeriodicity;
+  streetNames: string[];
+}
+
+function periodicityForDays(dayCount: number): SchedulePeriodicity {
+  if (dayCount >= 5) return "DAILY";
+  if (dayCount === 2) return "TWICE_WEEKLY";
+  if (dayCount === 1) return "WEEKLY";
+  return "TWICE_WEEKLY";
+}
+
+// --------------------------------------------------------------------------- //
+
+async function seedVehicles(): Promise<Map<string, string>> {
+  const rows = readJson<VehicleRow[]>("vehicles.json");
+  const byPlate = new Map<string, string>();
+  for (const row of rows) {
+    const vehicle = await prisma.vehicle.create({ data: row });
+    byPlate.set(row.plateNumber, vehicle.id);
+  }
+  console.log(`Seeded ${rows.length} vehicles.`);
+  return byPlate;
+}
+
+async function seedCollectionPoints(): Promise<Map<string, string>> {
+  const rows = readJson<CollectionPointRow[]>("collection-points.json");
+  const byAddress = new Map<string, string>();
+  let containerCount = 0;
+
+  for (const row of rows) {
+    const point = await prisma.collectionPoint.create({
+      data: {
+        address: row.address,
+        lat: row.lat,
+        lng: row.lng,
+        operatorName: row.operatorName,
+        isBulkWasteSite: row.isBulkWasteSite,
+        internalNotes: row.internalNotes,
+        // Реальних вимірів наповненості немає — заповнює інспектор.
+        fillLevelPercent: null,
+        lastMeasuredAt: null,
+      },
+    });
+    byAddress.set(row.address, point.id);
+
+    if (row.containers.length > 0) {
+      await prisma.container.createMany({
+        data: row.containers.map((c) => ({
+          collectionPointId: point.id,
+          wasteCategory: c.wasteCategory,
+          volumeLiters: c.volumeLiters,
+          quantity: c.quantity,
+        })),
+      });
+      containerCount += row.containers.length;
+    }
+  }
+
+  console.log(
+    `Seeded ${rows.length} collection points and ${containerCount} containers.`,
+  );
+  return byAddress;
+}
+
+async function seedStreetsAndContainerSchedules(
+  pointIdByAddress: Map<string, string>,
+  vehicleIdByPlate: Map<string, string>,
+): Promise<void> {
+  const rows = readJson<StreetRow[]>("streets.json");
+
+  // Кілька вулиць можуть мати спільний контейнерний майданчик — зводимо їхні
+  // графіки в один ScheduleContainer на майданчик (об'єднання днів, найраніший
+  // час, перше визначене авто).
+  const mergedByPoint = new Map<
+    string,
+    { days: Set<number>; timeFrom: string; vehiclePlate: string | null }
+  >();
+
+  for (const row of rows) {
+    const street = await prisma.street.create({
+      data: {
+        name: row.name,
+        nameNormalized: normalizeUkrainianStreetName(row.name),
+        district: null,
+        collectionMethod: row.collectionMethod,
+      },
+    });
+
+    if (row.collectionMethod !== "CONTAINER" || !row.primaryPointAddress) {
+      continue;
+    }
+    const pointId = pointIdByAddress.get(row.primaryPointAddress);
+    if (!pointId) {
+      console.warn(
+        `  ! street "${row.name}": collection point "${row.primaryPointAddress}" not found`,
+      );
+      continue;
+    }
+
+    await prisma.street.update({
+      where: { id: street.id },
+      data: { primaryCollectionPointId: pointId },
+    });
+
+    if (!row.schedule) continue;
+    const merged = mergedByPoint.get(pointId) ?? {
+      days: new Set<number>(),
+      timeFrom: row.schedule.timeFrom,
+      vehiclePlate: row.schedule.vehiclePlate,
+    };
+    for (const d of row.schedule.daysOfWeek) merged.days.add(d);
+    if (row.schedule.timeFrom < merged.timeFrom) {
+      merged.timeFrom = row.schedule.timeFrom;
+    }
+    merged.vehiclePlate = merged.vehiclePlate ?? row.schedule.vehiclePlate;
+    mergedByPoint.set(pointId, merged);
+  }
+
+  let scheduleCount = 0;
+  for (const [pointId, merged] of mergedByPoint) {
+    const daysOfWeek = [...merged.days].sort((a, b) => a - b);
+    const vehicleId = merged.vehiclePlate
+      ? (vehicleIdByPlate.get(merged.vehiclePlate) ?? null)
+      : null;
+    await prisma.scheduleContainer.create({
+      data: {
+        collectionPointId: pointId,
+        daysOfWeek,
+        timeFrom: merged.timeFrom,
+        periodicity: periodicityForDays(daysOfWeek.length),
+        vehicleId,
+      },
+    });
+    scheduleCount += 1;
+  }
+
+  const containerStreets = rows.filter(
+    (r) => r.collectionMethod === "CONTAINER",
+  ).length;
+  console.log(
+    `Seeded ${rows.length} streets ` +
+      `(${containerStreets} container / ${rows.length - containerStreets} package) ` +
+      `and ${scheduleCount} container schedules.`,
+  );
+}
+
+async function seedPackageSchedules(): Promise<void> {
+  const rows = readJson<PackageScheduleRow[]>("package-schedules.json");
+  // Match on the exact street name, not the normalized form: "вул. Шевченка"
+  // and "пров. Шевченка" are different streets that normalize to the same key.
+  const streetIdByName = new Map<string, string>();
+  for (const s of await prisma.street.findMany({
+    where: { collectionMethod: "PACKAGE" },
+    select: { id: true, name: true },
+  })) {
+    streetIdByName.set(s.name, s.id);
+  }
+
+  let groupCount = 0;
+  let linkCount = 0;
+  for (const row of rows) {
+    const streetIds = row.streetNames
+      .map((n) => streetIdByName.get(n))
+      .filter((id): id is string => Boolean(id));
+    if (streetIds.length === 0) continue;
+
+    const schedulePackage = await prisma.schedulePackage.create({
+      data: {
+        daysOfWeek: row.daysOfWeek,
+        timeFrom: row.timeFrom,
+        periodicity: row.periodicity,
+      },
+    });
+    await prisma.schedulePackageStreet.createMany({
+      data: streetIds.map((streetId) => ({
+        schedulePackageId: schedulePackage.id,
+        streetId,
+      })),
+      skipDuplicates: true,
+    });
+    groupCount += 1;
+    linkCount += streetIds.length;
+  }
+
+  console.log(
+    `Seeded ${groupCount} package schedule groups covering ${linkCount} streets.`,
+  );
+}
+
+// --------------------------------------------------------------------------- //
 
 interface SortingGuideSeedRow {
   name: string;
-  category: keyof typeof WasteCategory;
+  category: WasteCategory;
   isRecyclable: boolean;
   description: string;
   howToSort: string;
 }
 
-// Approximate center of Pryluky, Chernihiv Oblast (WGS84). Placeholder coordinates —
-// not a real geodetic survey. See plan doc for the seed-data disclosure.
-const CITY_CENTER = { lat: 50.583, lng: 32.383 };
-const COORD_SPREAD_DEGREES = 0.018;
+async function seedSortingGuide(): Promise<void> {
+  const items = readJson<SortingGuideSeedRow[]>("sorting-guide.json");
 
-const OPERATOR_NAMES = [
-  "КП «Прилукиблагоустрій»",
-  "КП «Прилукиспецкомунтранс»",
-];
-
-async function seedStreetsAndCollectionPoints(): Promise<void> {
-  const streets: StreetSeedRow[] = JSON.parse(
-    readFileSync(join(SEED_DATA_DIR, "streets.json"), "utf-8"),
-  );
-
-  let bulkWasteSitesCreated = 0;
-  const BULK_WASTE_SITE_TARGET = 4;
-
-  for (const [index, streetRow] of streets.entries()) {
-    const street = await prisma.street.create({
-      data: {
-        name: streetRow.name,
-        nameNormalized: normalizeUkrainianStreetName(streetRow.name),
-        district: streetRow.district,
-        collectionMethod: streetRow.collectionMethod,
-      },
-    });
-
-    if (streetRow.collectionMethod !== "CONTAINER") {
-      continue;
-    }
-
-    const latOffset = (random() - 0.5) * 2 * COORD_SPREAD_DEGREES;
-    const lngOffset = (random() - 0.5) * 2 * COORD_SPREAD_DEGREES;
-    const shouldBeBulkWasteSite =
-      bulkWasteSitesCreated < BULK_WASTE_SITE_TARGET && index % 9 === 0;
-
-    const fillLevelPercent = Math.floor(random() * 101);
-
-    const point = await prisma.collectionPoint.create({
-      data: {
-        address: `${streetRow.name}, майданчик біля буд. ${1 + Math.floor(random() * 40)}`,
-        lat: CITY_CENTER.lat + latOffset,
-        lng: CITY_CENTER.lng + lngOffset,
-        operatorName: pick(OPERATOR_NAMES),
-        isBulkWasteSite: shouldBeBulkWasteSite,
-        fillLevelPercent,
-        lastMeasuredAt: new Date(
-          Date.now() - Math.floor(random() * 5) * 24 * 60 * 60 * 1000,
-        ),
-      },
-    });
-
-    if (shouldBeBulkWasteSite) {
-      bulkWasteSitesCreated += 1;
-    }
-
-    await prisma.street.update({
-      where: { id: street.id },
-      data: { primaryCollectionPointId: point.id },
-    });
-
-    const containerPlan: { wasteCategory: WasteCategory; volumeLiters: number }[] =
-      [{ wasteCategory: "MIXED", volumeLiters: 1100 }];
-
-    if (random() > 0.3) {
-      containerPlan.push({ wasteCategory: "PLASTIC", volumeLiters: 1100 });
-    }
-    if (random() > 0.6) {
-      containerPlan.push({ wasteCategory: "GLASS", volumeLiters: 240 });
-    }
-    if (random() > 0.75) {
-      containerPlan.push({ wasteCategory: "PAPER", volumeLiters: 240 });
-    }
-
-    await prisma.container.createMany({
-      data: containerPlan.map((c) => ({
-        collectionPointId: point.id,
-        wasteCategory: c.wasteCategory,
-        volumeLiters: c.volumeLiters,
-        quantity: 1,
-      })),
-    });
-  }
-
-  const streetCount = await prisma.street.count();
-  const pointCount = await prisma.collectionPoint.count();
-  console.log(
-    `Seeded ${streetCount} streets and ${pointCount} collection points.`,
-  );
-}
-
-const VEHICLES = [
-  {
-    plateNumber: "AA 1234 EI",
-    vehicleType: "Сміттєвоз",
-    capacityM3: 12,
-    fuelNormLPer100km: 33,
-  },
-  {
-    plateNumber: "AA 5678 EI",
-    vehicleType: "Сміттєвоз",
-    capacityM3: 8,
-    fuelNormLPer100km: 28,
-  },
-];
-
-// [daysOfWeek, periodicity] — 1=Пн ... 7=Нд.
-const CONTAINER_DAY_PATTERNS: [number[], "WEEKLY" | "TWICE_WEEKLY"][] = [
-  [[1, 4], "TWICE_WEEKLY"],
-  [[2, 5], "TWICE_WEEKLY"],
-  [[3], "WEEKLY"],
-];
-
-const CONTAINER_TIMES = ["07:00", "07:30", "08:00"];
-
-async function seedContainerSchedules(): Promise<void> {
-  const vehicles = [];
-  for (const vehicleData of VEHICLES) {
-    vehicles.push(await prisma.vehicle.create({ data: vehicleData }));
-  }
-
-  const points = await prisma.collectionPoint.findMany({
-    select: { id: true },
+  await prisma.sortingGuideItem.createMany({
+    data: items.map((item, index) => ({
+      name: item.name,
+      category: item.category,
+      isRecyclable: item.isRecyclable,
+      description: item.description,
+      howToSort: item.howToSort,
+      sortOrder: index,
+    })),
   });
 
-  for (const point of points) {
-    const [daysOfWeek, periodicity] = pick(CONTAINER_DAY_PATTERNS);
-    await prisma.scheduleContainer.create({
-      data: {
-        collectionPointId: point.id,
-        daysOfWeek,
-        timeFrom: pick(CONTAINER_TIMES),
-        periodicity,
-        vehicleId: pick(vehicles).id,
-      },
-    });
-  }
-
-  console.log(`Seeded ${vehicles.length} vehicles and ${points.length} container schedules.`);
-}
-
-const PACKAGE_GROUP_SIZE = 2;
-const PACKAGE_TIMES = ["06:00", "06:30", "19:00"];
-
-async function seedPackageSchedules(): Promise<void> {
-  const packageStreets = await prisma.street.findMany({
-    where: { collectionMethod: "PACKAGE" },
-    select: { id: true },
-    orderBy: { name: "asc" },
-  });
-
-  let groupCount = 0;
-  for (let i = 0; i < packageStreets.length; i += PACKAGE_GROUP_SIZE) {
-    const group = packageStreets.slice(i, i + PACKAGE_GROUP_SIZE);
-    const [daysOfWeek, periodicity] = pick(CONTAINER_DAY_PATTERNS);
-
-    const schedulePackage = await prisma.schedulePackage.create({
-      data: {
-        daysOfWeek,
-        timeFrom: pick(PACKAGE_TIMES),
-        periodicity,
-      },
-    });
-
-    await prisma.schedulePackageStreet.createMany({
-      data: group.map((street) => ({
-        schedulePackageId: schedulePackage.id,
-        streetId: street.id,
-      })),
-    });
-
-    groupCount += 1;
-  }
-
-  console.log(`Seeded ${groupCount} package schedule groups for ${packageStreets.length} streets.`);
+  console.log(`Seeded ${items.length} sorting guide items.`);
 }
 
 // .example — зарезервована IANA TLD для документації/плейсхолдерів, щоб не
@@ -287,25 +343,6 @@ async function seedStaffUsers(): Promise<void> {
   );
 }
 
-async function seedSortingGuide(): Promise<void> {
-  const items: SortingGuideSeedRow[] = JSON.parse(
-    readFileSync(join(SEED_DATA_DIR, "sorting-guide.json"), "utf-8"),
-  );
-
-  await prisma.sortingGuideItem.createMany({
-    data: items.map((item, index) => ({
-      name: item.name,
-      category: item.category,
-      isRecyclable: item.isRecyclable,
-      description: item.description,
-      howToSort: item.howToSort,
-      sortOrder: index,
-    })),
-  });
-
-  console.log(`Seeded ${items.length} sorting guide items.`);
-}
-
 const NEWS_SEED_POSTS = [
   {
     title: "Запущено вебплатформу «Чисті Прилуки»",
@@ -313,8 +350,8 @@ const NEWS_SEED_POSTS = [
     daysAgo: 1,
   },
   {
-    title: "Триває дослідне наповнення бази даних контейнерних майданчиків",
-    body: "Координати та стан наповненості контейнерів наразі уточнюються — якщо помітили розбіжність, повідомте через розділ «Звернення».",
+    title: "Завантажено графіки вивезення ТПВ КП «Послуга»",
+    body: "На платформі — реальні маршрути, дні й час вивезення по вулицях громади та перелік контейнерних майданчиків з координатами. Якщо помітили розбіжність із фактичним вивезенням, повідомте через розділ «Звернення».",
     daysAgo: 3,
   },
 ];
@@ -370,217 +407,6 @@ async function seedKnowledgeBase(): Promise<void> {
   );
 }
 
-// ---------- Звернення громадян (для диспетчерської канбан-дошки) ----------
-
-const COMPLAINT_SEED_COUNT = 55;
-const COMPLAINT_DAY_MS = 24 * 60 * 60 * 1000;
-const COMPLAINT_SPREAD_DAYS = 21;
-
-const COMPLAINT_SUBJECTS = [
-  "Переповнений контейнер",
-  "Сміття біля майданчика",
-  "Неприємний запах",
-  "Контейнер пошкоджено",
-  "Не вивозять сміття за графіком",
-  "Захаращення прибудинкової території",
-  "Стихійне сміттєзвалище",
-  "Розкидане сміття після вивезення",
-];
-
-const COMPLAINT_APPLICANTS = [
-  "Іваненко Оксана Петрівна",
-  "Ткаченко Сергій Миколайович",
-  "Коваленко Марія Іванівна",
-  "Бондар Олег Васильович",
-  "Петренко Іван Олексійович",
-  "Сидоренко Наталія Григорівна",
-  "Гриценко Андрій Павлович",
-  "Мороз Тетяна Володимирівна",
-  "Шевченко Віктор Ігорович",
-  "Кравець Людмила Степанівна",
-  "Литвин Дмитро Анатолійович",
-  "Романюк Ганна Юріївна",
-];
-
-/** Статус → орієнтовна вага в розподілі (переважає активна робота диспетчера). */
-const COMPLAINT_STATUS_WEIGHTS: [ComplaintStatus, number][] = [
-  ["REGISTERED", 25],
-  ["UNDER_REVIEW", 20],
-  ["FORWARDED", 20],
-  ["DONE", 25],
-  ["REJECTED", 4],
-  ["EXTENDED", 3],
-  ["ANNULLED", 3],
-];
-
-const COMPLAINT_PRIORITY_WEIGHTS: [ComplaintPriority, number][] = [
-  ["HIGH", 25],
-  ["MEDIUM", 45],
-  ["LOW", 30],
-];
-
-const COMPLAINT_TYPE_WEIGHTS: [ComplaintType, number][] = [
-  ["COMPLAINT", 60],
-  ["PETITION", 20],
-  ["PROPOSAL", 20],
-];
-
-/** Ланцюжок статусів, через які пройшло звернення до фінального статусу. */
-const STATUS_PROGRESSION: Record<ComplaintStatus, ComplaintStatus[]> = {
-  REGISTERED: ["REGISTERED"],
-  UNDER_REVIEW: ["REGISTERED", "UNDER_REVIEW"],
-  FORWARDED: ["REGISTERED", "UNDER_REVIEW", "FORWARDED"],
-  EXTENDED: ["REGISTERED", "UNDER_REVIEW", "FORWARDED", "EXTENDED"],
-  DONE: ["REGISTERED", "UNDER_REVIEW", "FORWARDED", "DONE"],
-  REJECTED: ["REGISTERED", "UNDER_REVIEW", "REJECTED"],
-  ANNULLED: ["REGISTERED", "ANNULLED"],
-};
-
-function pickWeighted<T extends string>(weights: [T, number][]): T {
-  const total = weights.reduce((sum, [, w]) => sum + w, 0);
-  let roll = random() * total;
-  for (const [value, weight] of weights) {
-    if (roll < weight) return value;
-    roll -= weight;
-  }
-  return weights[weights.length - 1][0];
-}
-
-async function seedComplaints(): Promise<void> {
-  const points = await prisma.collectionPoint.findMany({
-    select: {
-      id: true,
-      address: true,
-      lat: true,
-      lng: true,
-      streetsServed: { select: { id: true } },
-    },
-  });
-  const dispatchers = await prisma.staffUser.findMany({
-    where: { role: "DISPATCHER" },
-    select: { id: true },
-  });
-  const inspectors = await prisma.staffUser.findMany({
-    where: { role: "INSPECTOR" },
-    select: { id: true },
-  });
-
-  if (points.length === 0 || dispatchers.length === 0 || inspectors.length === 0) {
-    console.log("Skipping complaint seed: missing points/dispatchers/inspectors.");
-    return;
-  }
-
-  const now = Date.now();
-
-  for (let i = 0; i < COMPLAINT_SEED_COUNT; i++) {
-    const point = pick(points);
-    const street = point.streetsServed[0] ?? null;
-    const type = pickWeighted(COMPLAINT_TYPE_WEIGHTS);
-    const finalStatus = pickWeighted(COMPLAINT_STATUS_WEIGHTS);
-    const priority = pickWeighted(COMPLAINT_PRIORITY_WEIGHTS);
-    const subject = pick(COMPLAINT_SUBJECTS);
-
-    const daysAgo = random() * COMPLAINT_SPREAD_DAYS;
-    const createdAt = new Date(now - daysAgo * COMPLAINT_DAY_MS);
-
-    const { dueDate, deadlineType } = computeComplaintDeadline(type, createdAt);
-    const registrationNumber = await generateRegistrationNumber(createdAt);
-
-    const progression = STATUS_PROGRESSION[finalStatus];
-    const assignedInspector = pick(inspectors);
-    const isAssigned = progression.length > 1;
-
-    let annulReason: string | undefined;
-    if (finalStatus === "ANNULLED") {
-      annulReason = "Звернення подано повторно за тим самим фактом";
-    }
-
-    let extendedDueDate: Date | null = null;
-
-    const complaint = await prisma.complaint.create({
-      data: {
-        registrationNumber,
-        type,
-        subject,
-        description: `${subject}. Адреса: ${point.address}. Просимо вжити заходів згідно з чинним регламентом.`,
-        addressText: point.address,
-        lat: point.lat,
-        lng: point.lng,
-        ...(street ? { street: { connect: { id: street.id } } } : {}),
-        collectionPoint: { connect: { id: point.id } },
-        applicantName: pick(COMPLAINT_APPLICANTS),
-        applicantPhone: `+380${pick(["67", "68", "50", "63", "97"])}${String(
-          1000000 + Math.floor(random() * 8999999),
-        )}`,
-        personalDataConsent: true,
-        status: finalStatus,
-        priority,
-        deadlineType,
-        dueDate,
-        ...(isAssigned
-          ? { assignedToStaff: { connect: { id: assignedInspector.id } } }
-          : {}),
-        isAnnulled: finalStatus === "ANNULLED",
-        annulReason,
-        createdAt,
-      },
-    });
-
-    let stepChangedAt = createdAt;
-    const versionRows: {
-      complaintId: string;
-      versionNumber: number;
-      status: ComplaintStatus;
-      authorStaffId: string | null;
-      resolutionText?: string;
-      changedAt: Date;
-    }[] = progression.map((status, index) => {
-      if (index === 0) {
-        return {
-          complaintId: complaint.id,
-          versionNumber: 1,
-          status,
-          authorStaffId: null,
-          changedAt: createdAt,
-        };
-      }
-      const hoursForward = 2 + random() * 34;
-      stepChangedAt = new Date(
-        Math.min(stepChangedAt.getTime() + hoursForward * 60 * 60 * 1000, now),
-      );
-      if (status === "EXTENDED") {
-        extendedDueDate = new Date(
-          stepChangedAt.getTime() + 15 * COMPLAINT_DAY_MS,
-        );
-      }
-      return {
-        complaintId: complaint.id,
-        versionNumber: index + 1,
-        status,
-        authorStaffId: index === 1 ? pick(dispatchers).id : assignedInspector.id,
-        resolutionText:
-          status === "DONE"
-            ? "Майданчик очищено, контейнер вивезено позачергово."
-            : status === "REJECTED"
-              ? "Факт не підтверджено під час виїзної перевірки."
-              : undefined,
-        changedAt: stepChangedAt,
-      };
-    });
-
-    await prisma.complaintVersion.createMany({ data: versionRows });
-
-    if (extendedDueDate) {
-      await prisma.complaint.update({
-        where: { id: complaint.id },
-        data: { dueDate: extendedDueDate },
-      });
-    }
-  }
-
-  console.log(`Seeded ${COMPLAINT_SEED_COUNT} complaints with version history.`);
-}
-
 async function main(): Promise<void> {
   console.log("Clearing existing data...");
   await prisma.complaintAttachment.deleteMany();
@@ -599,14 +425,14 @@ async function main(): Promise<void> {
   await prisma.knowledgeChunk.deleteMany();
   await prisma.knowledgeDocument.deleteMany();
 
-  await seedStreetsAndCollectionPoints();
-  await seedContainerSchedules();
+  const vehicleIdByPlate = await seedVehicles();
+  const pointIdByAddress = await seedCollectionPoints();
+  await seedStreetsAndContainerSchedules(pointIdByAddress, vehicleIdByPlate);
   await seedPackageSchedules();
   await seedSortingGuide();
   await seedStaffUsers();
   await seedNews();
   await seedKnowledgeBase();
-  await seedComplaints();
 }
 
 main()

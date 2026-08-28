@@ -1,62 +1,1803 @@
 [
-  { "name": "Соборна вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Шевченка", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Гоголя", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Київська вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Незалежності", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Європейська вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Григорія Сковороди", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Гімназична вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Коцюбинського", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Грушевського Михайла", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Івана Мазепи", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Симона Петлюри", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Гетьмана Сагайдачного", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Івана Скоропадського", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Пирятинська вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Лохвицька вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Варвинська вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Чернігівська вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Вокзальна", "district": "Привокзальний", "collectionMethod": "CONTAINER" },
-  { "name": "Залізнична вулиця", "district": "Привокзальний", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Кільцева", "district": "Привокзальний", "collectionMethod": "CONTAINER" },
-  { "name": "Набережна вулиця", "district": "Замостянський", "collectionMethod": "PACKAGE" },
-  { "name": "Паркова вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Садова вулиця", "district": "Замостянський", "collectionMethod": "PACKAGE" },
-  { "name": "Лугова вулиця", "district": "Замостянський", "collectionMethod": "PACKAGE" },
-  { "name": "Степова вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Польова вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Дачна вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Хуторянська вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Ярмаркова вулиця", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Козача вулиця 1", "district": "Замостянський", "collectionMethod": "PACKAGE" },
-  { "name": "Козача вулиця 2", "district": "Замостянський", "collectionMethod": "PACKAGE" },
-  { "name": "Промислова вулиця", "district": "Промзона", "collectionMethod": "CONTAINER" },
-  { "name": "Індустріальна вулиця", "district": "Промзона", "collectionMethod": "CONTAINER" },
-  { "name": "Фабрична вулиця", "district": "Промзона", "collectionMethod": "CONTAINER" },
-  { "name": "Молодіжна вулиця", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Лесі Українки", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Богдана Хмельницького", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Небесної Сотні", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Героїв Крут", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Героїв Чорнобиля", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Героїв Прилук", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Василя Стуса", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця В'ячеслава Чорновола", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Миру", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Перемоги", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "Ветеранська вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Кооперативна вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Нова вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Західна вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Зелена вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Низова вулиця", "district": "Замостянський", "collectionMethod": "PACKAGE" },
-  { "name": "вулиця Кругова", "district": "Замостянський", "collectionMethod": "PACKAGE" },
-  { "name": "вулиця Миролюбна", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Педагогічна вулиця", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "Шкільна вулиця", "district": "Мікрорайон", "collectionMethod": "CONTAINER" },
-  { "name": "вулиця Січових Стрільців", "district": "Центр", "collectionMethod": "CONTAINER" },
-  { "name": "Партизанська вулиця", "district": "Іванівка", "collectionMethod": "PACKAGE" },
-  { "name": "Мгарська вулиця", "district": "Мгарський", "collectionMethod": "PACKAGE" },
-  { "name": "Ладанська вулиця", "district": "Мгарський", "collectionMethod": "PACKAGE" }
+  {
+    "name": "1 в'їзд Вишневий",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Андріївський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. В. Стуса",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Героїв Чорнобиля",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Замостянський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Зелений",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Змагання",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Колгоспний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Межовий",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Оранжерейний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. П. Комуни",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Педагогічний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Пирогівський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Південний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Скоропадського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Східний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Удайський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. Європейський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1 пров. І. Сірка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "1,2 в'їзд Шарапівський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 в'їзд Василя Стуса",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 в'їзд Вишневий",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 в'їзд Гоголя",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 в-д Небесної Сотні",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Андріївський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. В. Стуса",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. В. Чорновола",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Героїв Прилук",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Героїв Чорнобиля",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Дослідний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Зелений",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Змагання",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Межовий",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. П. Комуни",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Педагогічний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Пирогівський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Рокітний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Східний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Удайський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Шевченка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. Європейський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "2 пров. І. Сірка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "3 пров. Гімназичний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "3 пров. Дослідний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "3 пров. Замостянський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "3 пров. П. Комуни",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "3 пров. Удайський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "3 пров. Європейський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "3 пров. І. Сірка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "4 пров. Дослідний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "4 пров. Замостянський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "4 пров. Педагогічний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "5 в'їзд Гоголя",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "6 км",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "в'їзд Густинський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "В/м",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "В/м 12",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "в/м №12, буд. 152",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:20",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 14-65 ЕО"
+    }
+  },
+  {
+    "name": "в/м 17",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "В/ч 12",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. 18 Вересня",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. 2-га Південна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Авіації",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Аерофлотська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Андріївська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Архиповича",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Архиповича, 14 (Сорочинці)",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2
+      ],
+      "timeFrom": "07:00",
+      "periodicity": "TWICE_WEEKLY",
+      "vehiclePlate": "СВ 52-62 СА"
+    }
+  },
+  {
+    "name": "вул. Б. Носенка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Б. Хмельницького",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Берегова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Берегова Рута",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ботанічна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Братів Ревуцьких",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Будівельників",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. В. Завітневича",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. В. Стуса",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. В. Чорновола",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. В. Чорновола, 113",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:35",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Варвинська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Вербна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ветеранська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Ветеранська, 2 (парк слави)",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:40",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Вокзальна",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Вокзальна, 3",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:45",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Волошинівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Військова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Г. Сагайдачного",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Галаганівська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Галаганівська",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "12:55",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 53-06 СА"
+    }
+  },
+  {
+    "name": "вул. Гвардійська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Гвардійська, 92",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "timeFrom": "07:00",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Героїв Крут",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Героїв Прилук",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Героїв Чорнобиля",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Героїв Чорнобиля, 80",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "09:30",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 33-16 ЕО"
+    }
+  },
+  {
+    "name": "вул. Герцена",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Гоголя",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Голубівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Гостинна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Грушевського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Густинська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Гімназична",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Гімназична, 85 (карам.)",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "08:20",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 14-65 ЕО"
+    }
+  },
+  {
+    "name": "вул. Д. Шкоропада",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Дачна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Дубинського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Дідівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ждановича",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Житня",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Залізнична",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Західна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Зелена",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Земська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Земська, 7",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:10",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Кар'єрна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Квашинська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Київська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Київська, 113",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:00",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Київська-Козача",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Київська-І. Сірка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Климачівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ковалівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Козача",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Коновальця",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Коновальця, 67 (автозаправка )",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        3,
+        6
+      ],
+      "timeFrom": "07:15",
+      "periodicity": "TWICE_WEEKLY",
+      "vehiclePlate": "СВ 14-65 ЕО"
+    }
+  },
+  {
+    "name": "вул. Короленка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Кощюбинського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Кругова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Кустівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Кільцева",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Л. Забашти",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Л. Лук'яненка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Л. Українки",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ладанська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Леонтовича",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Леонтовича, 66",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        4,
+        5
+      ],
+      "timeFrom": "07:20",
+      "periodicity": "TWICE_WEEKLY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Лохвицька",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Лісовська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. М. Андріяшева",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. М. Леонтовича",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. М. Леонтовича, 76",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:30",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 33-16 ЕО"
+    }
+  },
+  {
+    "name": "вул. М. Лисенка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. М. Маркевича",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. М. Міхновського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. М. Приймаченка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. М. Старицького",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. М. Яковченка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Макаренка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Малківська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Мединська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Межова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Миколаївська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Миролюбна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Миротворців",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Миру",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Михайлівський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Молодіжна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Н. Левинського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Небесної Сотні",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Небесної сотні, 14",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "09:55",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 53-06 СА"
+    }
+  },
+  {
+    "name": "вул. Незалежності",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Низова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Нова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ніжинська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. О. Пчілки",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Оранжерейна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Осипенка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. П. Дорошенка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. П. Орлика",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. П. Сагайдачного",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Паркова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Партизанська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Педагогічна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Перемоги",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Перемоги, 180",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "timeFrom": "08:40",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Переяславська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Переяславська, 10",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:30",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 53-06 СА"
+    }
+  },
+  {
+    "name": "вул. Пирогівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Пирятинська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Плискунівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Половецька",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Польова",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Польова, 100",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "08:45",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Південна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Піщана",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ракітна, П. Комуни",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Раскова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Родини Горленків",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Рокітна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. С. Величка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Сагайдачного",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Садова",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Садова, 64",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:45",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 33-16 ЕО"
+    }
+  },
+  {
+    "name": "вул. Саксаганського",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Саксаганського, 52",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:25",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 17-85 ВН"
+    }
+  },
+  {
+    "name": "вул. Світанкова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Сковороди",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Соборна",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Соборна, 125",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "08:25",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 14-65 ЕО"
+    }
+  },
+  {
+    "name": "вул. Сорочинська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Степова",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Січових Стрільців",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Трубарівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Фабрична",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Червона Рута",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Чернігівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Чорновола",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Шарапівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Шевченка",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Шевченка, 107",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "09:45",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 33-16 ЕО"
+    }
+  },
+  {
+    "name": "вул. Шкоропада",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Шкільна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ю. Коваленка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ю. Мірюти",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Ю. Мірюти, 30",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "08:45",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 52-62 СА"
+    }
+  },
+  {
+    "name": "вул. Яблунівська",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Ярмаркова",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Ярмаркова, 49",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:10",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Європейська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Європейська, 110",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "07:25",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. І. Богуна",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. І. Білгородського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. І. Мазепи",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. І. Піддубного",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. І. Сірка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. І. Франка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Іванівська",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Іванівська, 84",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3
+      ],
+      "timeFrom": "07:25",
+      "periodicity": "TWICE_WEEKLY",
+      "vehiclePlate": "СВ 81-71 ВК"
+    }
+  },
+  {
+    "name": "вул. Індустріальна",
+    "collectionMethod": "CONTAINER",
+    "primaryPointAddress": "вул. Індустріальна, 7А",
+    "schedule": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timeFrom": "08:40",
+      "periodicity": "DAILY",
+      "vehiclePlate": "СВ 53-06 СА"
+    }
+  },
+  {
+    "name": "від вул. Перемоги до",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "Замовлення",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Котляревського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "М'ясокомбінат",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "М-н \"Ірина\"",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "перехрестя Земська-Скоропадського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "перехрестя Київська-Котляревського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "Привокзальну площа",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Ветеранський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Героїв Прилук",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Густинський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Ждановича",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Заводський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Залізничний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Західний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Кустівський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Л. Українки",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. М. Леонтовича",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. М. Лисенка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. М. Приймаченко",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. М. Старицького",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. О. Вересая",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. П. Орлика",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. П. Сагайдачного",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Партизанський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Пирятинський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Польовий",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Прорізний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Північний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Східний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Трубарівський",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Трудовий",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Фабричний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Фізкультурника",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Шевченка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Ю. Коваленка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. І. Мазепи",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. І. Франка",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "пров. Іподромний",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "провв. Л. Забашти",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "провул. Г. Сагайдачного",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  },
+  {
+    "name": "вул. Скоропадського",
+    "collectionMethod": "PACKAGE",
+    "primaryPointAddress": null,
+    "schedule": null
+  }
 ]
