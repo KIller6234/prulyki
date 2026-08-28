@@ -5,7 +5,12 @@ import { getClientIp, isWithinRateLimit } from "@/lib/rate-limit";
 import { chatMessageSchema } from "@/lib/validation/chat";
 import { KeywordRetriever } from "@/lib/ai/retrieval/keyword-retriever";
 import { getWasteConsultantProvider } from "@/lib/ai";
-import type { ChatTurn, ConsultantCitation } from "@/lib/ai/provider";
+import { NoLLMConfiguredProvider } from "@/lib/ai/providers/mock-provider";
+import type {
+  ChatTurn,
+  ConsultantAnswer,
+  ConsultantCitation,
+} from "@/lib/ai/provider";
 import type { ApiResponse } from "@/types/api";
 
 const CHAT_RATE_LIMIT_PER_MINUTE = 20;
@@ -65,8 +70,15 @@ export async function POST(
   const retriever = new KeywordRetriever();
   const chunks = await retriever.search(message, RETRIEVAL_LIMIT);
 
-  const provider = getWasteConsultantProvider();
-  const answer = await provider.answer(message, chunks, history);
+  // Якщо реальний LLM-провайдер впав (недоступний ключ, ліміт, збій мережі) —
+  // не віддаємо 500, а деградуємо до чесної відповіді з фрагментів бази знань.
+  let answer: ConsultantAnswer;
+  try {
+    answer = await getWasteConsultantProvider().answer(message, chunks, history);
+  } catch (error: unknown) {
+    console.error("Consultant LLM provider failed, falling back:", error);
+    answer = await new NoLLMConfiguredProvider().answer(message, chunks, history);
+  }
 
   await prisma.$transaction([
     prisma.chatMessage.create({
