@@ -180,6 +180,86 @@ for r in bulk_rows[4:]:
     bulk_keys.add(addr_key(r[1], r[2]))
 
 
+# ---- street schedules (aggregated per street from Зведена_по_адресах) --- #
+
+zv = wb["Зведена_по_адресах"]
+zrows = list(zv.iter_rows(values_only=True))
+
+# Merge rows by a loose street key so casing / punctuation variants
+# ("В/м 12" vs "в/м 12") collapse into one Street.
+agg: dict[str, dict] = {}
+name_votes: dict[str, dict] = defaultdict(lambda: defaultdict(int))
+for r in zrows[4:]:
+    name = r[0]
+    if not name:
+        continue
+    name = str(name).strip()
+    key = norm_street_key(name)
+    if not key:
+        continue
+    name_votes[key][name] += 1
+    a = agg.setdefault(
+        key,
+        {
+            "name": name,
+            "daytimes": set(),  # (weekday_num, "HH:MM")
+            "vehicleCells": [],
+            "linkedSiteNames": set(),
+            "coord": None,
+        },
+    )
+    for col in range(2, 9):  # Пн..Нд
+        t = r[col]
+        if t in (None, ""):
+            continue
+        wd = col - 1  # col 2 -> Monday(1)
+        for piece in str(t).split(","):
+            hhmm = clean_time(piece)
+            if hhmm:
+                a["daytimes"].add((wd, hhmm))
+    if r[11]:
+        a["vehicleCells"].append(str(r[11]))
+    site_link = r[19]
+    if site_link:
+        a["linkedSiteNames"].add(str(site_link).strip())
+    if a["coord"] is None and in_bbox(r[17], r[18]):
+        a["coord"] = [float(r[17]), float(r[18])]
+
+
+def _schedule_from_agg(a: dict) -> dict | None:
+    if not a or not a["daytimes"]:
+        return None
+    daytimes = sorted(a["daytimes"])
+    days = sorted({wd for wd, _ in daytimes})
+    time_from = min(t for _, t in daytimes)
+    vehicle_plate = None
+    for cell in a["vehicleCells"]:
+        vehicle_plate = match_vehicle(cell)
+        if vehicle_plate:
+            break
+    return {
+        "daysOfWeek": days,
+        "timeFrom": time_from,
+        "periodicity": periodicity_for(len(days)),
+        "vehiclePlate": vehicle_plate,
+    }
+
+
+def street_schedule_for(address: str) -> dict | None:
+    """Best street-level schedule for a container site, matched by street name
+    (handles 'Перехрестя A - B' by trying each part)."""
+    first = re.split(r",", str(address), 1)[0]
+    first = re.sub(r"\(.*?\)", " ", first)  # drop "(АТБ)", "(3-й магазин)" тощо
+    for part in re.split(r"\s[-–—]\s|перехрестя", first, flags=re.IGNORECASE):
+        part = part.strip()
+        if not part:
+            continue
+        sched = _schedule_from_agg(agg.get(norm_street_key(part)))
+        if sched:
+            return sched
+    return None
+
+
 # ---- collection points (61 real sites) --------------------------------- #
 
 sites_ws = wb["Координати майданчиків"]
@@ -235,6 +315,9 @@ for r in srows[3:]:
             else (str(obj_type).strip() if obj_type else None)
         ),
         "containers": containers,
+        # Графік вивезення для КОЖНОГО майданчика — з розкладу вулиці, на якій
+        # він стоїть (не лише для тих, що співпали з CONTAINER-вулицею).
+        "schedule": street_schedule_for(address),
     }
     points.append(point)
     site_by_address[str(address).strip()] = point
@@ -242,50 +325,7 @@ for r in srows[3:]:
     site_by_street.setdefault(st_key, point)
 
 
-# ---- streets + schedules --------------------------------------------------- #
-
-zv = wb["Зведена_по_адресах"]
-zrows = list(zv.iter_rows(values_only=True))
-
-# Merge rows by a loose street key so casing / punctuation variants
-# ("В/м 12" vs "в/м 12") collapse into one Street.
-agg: dict[str, dict] = {}
-name_votes: dict[str, dict] = defaultdict(lambda: defaultdict(int))
-for r in zrows[4:]:
-    name = r[0]
-    if not name:
-        continue
-    name = str(name).strip()
-    key = norm_street_key(name)
-    if not key:
-        continue
-    name_votes[key][name] += 1
-    a = agg.setdefault(
-        key,
-        {
-            "name": name,
-            "daytimes": set(),  # (weekday_num, "HH:MM")
-            "vehicleCells": [],
-            "linkedSiteNames": set(),
-            "coord": None,
-        },
-    )
-    for col in range(2, 9):  # Пн..Нд
-        t = r[col]
-        if t in (None, ""):
-            continue
-        wd = col - 1  # col 2 -> Monday(1)
-        for piece in str(t).split(","):
-            hhmm = clean_time(piece)
-            if hhmm:
-                a["daytimes"].add((wd, hhmm))
-    if r[11]:
-        a["vehicleCells"].append(str(r[11]))
-    site_link = r[19]
-    if site_link:
-        a["linkedSiteNames"].add(str(site_link).strip())
-    if a["coord"] is None and in_bbox(r[17], r[18]):
-        a["coord"] = [float(r[17]), float(r[18])]
+# ---- streets --------------------------------------------------------------- #
 
 streets_out: list[dict] = []
 package_groups: dict[tuple, list[str]] = defaultdict(list)
@@ -379,6 +419,8 @@ print(f"vehicles                : {len(vehicles)}")
 print(f"collection points       : {len(points)}")
 print(f"  bulk-waste sites       : {sum(1 for p in points if p['isBulkWasteSite'])}")
 print(f"  total containers        : {sum(len(p['containers']) for p in points)}")
+print(f"  with a schedule        : {sum(1 for p in points if p['schedule'])}")
+print(f"  WITHOUT a schedule     : {[p['address'] for p in points if not p['schedule']]}")
 print(f"streets                 : {len(streets_out)}")
 print(f"  CONTAINER (site match) : {sum(1 for s in streets_out if s['collectionMethod']=='CONTAINER')}")
 print(f"  PACKAGE (curbside)     : {sum(1 for s in streets_out if s['collectionMethod']=='PACKAGE')}")

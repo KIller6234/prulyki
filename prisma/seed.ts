@@ -44,6 +44,13 @@ interface ContainerRow {
   quantity: number;
 }
 
+interface ScheduleRow {
+  daysOfWeek: number[];
+  timeFrom: string;
+  periodicity: SchedulePeriodicity;
+  vehiclePlate: string | null;
+}
+
 interface CollectionPointRow {
   address: string;
   lat: number;
@@ -52,20 +59,15 @@ interface CollectionPointRow {
   isBulkWasteSite: boolean;
   internalNotes: string | null;
   containers: ContainerRow[];
-}
-
-interface StreetScheduleRow {
-  daysOfWeek: number[];
-  timeFrom: string;
-  periodicity: SchedulePeriodicity;
-  vehiclePlate: string | null;
+  /** Графік вивезення для цього майданчика (з розкладу його вулиці). */
+  schedule: ScheduleRow | null;
 }
 
 interface StreetRow {
   name: string;
   collectionMethod: CollectionMethod;
   primaryPointAddress: string | null;
-  schedule: StreetScheduleRow | null;
+  schedule: ScheduleRow | null;
 }
 
 interface PackageScheduleRow {
@@ -95,10 +97,13 @@ async function seedVehicles(): Promise<Map<string, string>> {
   return byPlate;
 }
 
-async function seedCollectionPoints(): Promise<Map<string, string>> {
+async function seedCollectionPoints(
+  vehicleIdByPlate: Map<string, string>,
+): Promise<Map<string, string>> {
   const rows = readJson<CollectionPointRow[]>("collection-points.json");
   const byAddress = new Map<string, string>();
   let containerCount = 0;
+  let scheduleCount = 0;
 
   for (const row of rows) {
     const point = await prisma.collectionPoint.create({
@@ -127,27 +132,36 @@ async function seedCollectionPoints(): Promise<Map<string, string>> {
       });
       containerCount += row.containers.length;
     }
+
+    // Кожен майданчик отримує графік вивезення з розкладу своєї вулиці.
+    if (row.schedule) {
+      const daysOfWeek = [...row.schedule.daysOfWeek].sort((a, b) => a - b);
+      await prisma.scheduleContainer.create({
+        data: {
+          collectionPointId: point.id,
+          daysOfWeek,
+          timeFrom: row.schedule.timeFrom,
+          periodicity: periodicityForDays(daysOfWeek.length),
+          vehicleId: row.schedule.vehiclePlate
+            ? (vehicleIdByPlate.get(row.schedule.vehiclePlate) ?? null)
+            : null,
+        },
+      });
+      scheduleCount += 1;
+    }
   }
 
   console.log(
-    `Seeded ${rows.length} collection points and ${containerCount} containers.`,
+    `Seeded ${rows.length} collection points, ${containerCount} containers, ` +
+      `${scheduleCount} container schedules.`,
   );
   return byAddress;
 }
 
-async function seedStreetsAndContainerSchedules(
+async function seedStreets(
   pointIdByAddress: Map<string, string>,
-  vehicleIdByPlate: Map<string, string>,
 ): Promise<void> {
   const rows = readJson<StreetRow[]>("streets.json");
-
-  // Кілька вулиць можуть мати спільний контейнерний майданчик — зводимо їхні
-  // графіки в один ScheduleContainer на майданчик (об'єднання днів, найраніший
-  // час, перше визначене авто).
-  const mergedByPoint = new Map<
-    string,
-    { days: Set<number>; timeFrom: string; vehiclePlate: string | null }
-  >();
 
   for (const row of rows) {
     const street = await prisma.street.create({
@@ -169,42 +183,10 @@ async function seedStreetsAndContainerSchedules(
       );
       continue;
     }
-
     await prisma.street.update({
       where: { id: street.id },
       data: { primaryCollectionPointId: pointId },
     });
-
-    if (!row.schedule) continue;
-    const merged = mergedByPoint.get(pointId) ?? {
-      days: new Set<number>(),
-      timeFrom: row.schedule.timeFrom,
-      vehiclePlate: row.schedule.vehiclePlate,
-    };
-    for (const d of row.schedule.daysOfWeek) merged.days.add(d);
-    if (row.schedule.timeFrom < merged.timeFrom) {
-      merged.timeFrom = row.schedule.timeFrom;
-    }
-    merged.vehiclePlate = merged.vehiclePlate ?? row.schedule.vehiclePlate;
-    mergedByPoint.set(pointId, merged);
-  }
-
-  let scheduleCount = 0;
-  for (const [pointId, merged] of mergedByPoint) {
-    const daysOfWeek = [...merged.days].sort((a, b) => a - b);
-    const vehicleId = merged.vehiclePlate
-      ? (vehicleIdByPlate.get(merged.vehiclePlate) ?? null)
-      : null;
-    await prisma.scheduleContainer.create({
-      data: {
-        collectionPointId: pointId,
-        daysOfWeek,
-        timeFrom: merged.timeFrom,
-        periodicity: periodicityForDays(daysOfWeek.length),
-        vehicleId,
-      },
-    });
-    scheduleCount += 1;
   }
 
   const containerStreets = rows.filter(
@@ -212,8 +194,7 @@ async function seedStreetsAndContainerSchedules(
   ).length;
   console.log(
     `Seeded ${rows.length} streets ` +
-      `(${containerStreets} container / ${rows.length - containerStreets} package) ` +
-      `and ${scheduleCount} container schedules.`,
+      `(${containerStreets} container / ${rows.length - containerStreets} package).`,
   );
 }
 
@@ -426,8 +407,8 @@ async function main(): Promise<void> {
   await prisma.knowledgeDocument.deleteMany();
 
   const vehicleIdByPlate = await seedVehicles();
-  const pointIdByAddress = await seedCollectionPoints();
-  await seedStreetsAndContainerSchedules(pointIdByAddress, vehicleIdByPlate);
+  const pointIdByAddress = await seedCollectionPoints(vehicleIdByPlate);
+  await seedStreets(pointIdByAddress);
   await seedPackageSchedules();
   await seedSortingGuide();
   await seedStaffUsers();
