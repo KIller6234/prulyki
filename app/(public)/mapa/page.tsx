@@ -27,7 +27,7 @@ const WASTE_CATEGORY_OPTIONS = [
   { value: "PLASTIC", label: "Пластик" },
   { value: "GLASS", label: "Скло" },
   { value: "PAPER", label: "Папір" },
-  { value: "BULK", label: "ВГВ" },
+  { value: "BULK", label: "Великогабаритні відходи" },
 ] as const;
 
 interface Filters {
@@ -147,7 +147,7 @@ export default function MapaPage() {
           </div>
 
           <FilterChip
-            label="Лише ВГВ"
+            label="Великогабаритні відходи"
             active={filters.onlyBulk}
             onToggle={() =>
               setFilters((f) => ({ ...f, onlyBulk: !f.onlyBulk }))

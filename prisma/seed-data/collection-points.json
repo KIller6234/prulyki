@@ -348,6 +348,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 4
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {
@@ -509,6 +514,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 5
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {
@@ -553,6 +563,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 3
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {
@@ -1394,6 +1409,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 6
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {
@@ -1908,6 +1928,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 6
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {
@@ -2118,6 +2143,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 4
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {
@@ -2380,6 +2410,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 5
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {
@@ -2424,6 +2459,11 @@
         "wasteCategory": "MIXED",
         "volumeLiters": 1100,
         "quantity": 5
+      },
+      {
+        "wasteCategory": "BULK",
+        "volumeLiters": 5000,
+        "quantity": 1
       }
     ],
     "schedule": {

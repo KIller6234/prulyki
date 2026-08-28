@@ -303,12 +303,19 @@ for r in srows[3:]:
     parts = re.split(r",", str(address), 1)
     st_key = norm_street_key(parts[0])
     house = parts[1] if len(parts) > 1 else ""
+    is_bulk = addr_key(parts[0], house) in bulk_keys
+    if is_bulk:
+        # Майданчики з послугою ВГВ мають бункер великогабаритних відходів
+        # (Методика роздільного збирання: контейнери ВГВ місткістю ≥ 5 м³).
+        containers.append(
+            {"wasteCategory": "BULK", "volumeLiters": 5000, "quantity": 1}
+        )
     point = {
         "address": str(address).strip(),
         "lat": lat,
         "lng": lng,
         "operatorName": OPERATOR_NAME,
-        "isBulkWasteSite": addr_key(parts[0], house) in bulk_keys,
+        "isBulkWasteSite": is_bulk,
         "internalNotes": (
             None
             if obj_type == "Контейнерний майданчик"
