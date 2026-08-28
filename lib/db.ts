@@ -5,11 +5,19 @@ declare global {
   var prismaGlobal: PrismaClient | undefined;
 }
 
-const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
+// На serverless-хостингу (Netlify Functions) кожен інстанс функції тримає
+// власний пул з'єднань. Supabase-пулер має ліміт pool_size, тож без
+// обмеження `max` з'єднання впираються в EMAXCONNSESSION і кожен запит до
+// БД падає з 500. Тримаємо маленький пул на інстанс і переживаємо клієнта
+// між викликами через globalThis — у тому числі в production.
+const POOL_MAX = Number(process.env.DATABASE_POOL_MAX ?? 1);
+
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+  max: POOL_MAX,
+});
 
 export const prisma: PrismaClient =
   globalThis.prismaGlobal ?? new PrismaClient({ adapter });
 
-if (process.env.NODE_ENV !== "production") {
-  globalThis.prismaGlobal = prisma;
-}
+globalThis.prismaGlobal = prisma;
